@@ -23,7 +23,7 @@ export function Intro({ go }: { go: GoToPage }) {
             </div>
           ))}
         </div>
-        <button type="button" className="primary-button h-[50px] rounded-[14px]" onClick={() => go('surveyStart')}>
+        <button type="button" className="primary-button h-[50px] rounded-[14px]" onClick={() => go('personalInfo')}>
           다음 <Icon name="arrow_forward" className="text-base" />
         </button>
       </div>

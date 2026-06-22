@@ -1,8 +1,11 @@
 export { Dashboard } from './Dashboard';
 export { Home } from './Home';
 export { Intro } from './Intro';
+export { GuardianConsent } from './GuardianConsent';
 export { Login } from './Login';
 export { MyPage } from './MyPage';
+export { NoGuardian } from './NoGuardian';
+export { PersonalInfo } from './PersonalInfo';
 export { Roadmap } from './Roadmap';
 export { Signup } from './Signup';
 export { SurveyComplete } from './SurveyComplete';

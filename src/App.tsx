@@ -1,6 +1,22 @@
 import { useMemo, useState } from 'react';
 import type { Page } from './types';
-import { Dashboard, Home, Intro, Login, MyPage, Roadmap, Signup, SurveyComplete, SurveyForm, SurveyResult, SurveyStart, Welcome } from './pages';
+import {
+  Dashboard,
+  GuardianConsent,
+  Home,
+  Intro,
+  Login,
+  MyPage,
+  NoGuardian,
+  PersonalInfo,
+  Roadmap,
+  Signup,
+  SurveyComplete,
+  SurveyForm,
+  SurveyResult,
+  SurveyStart,
+  Welcome
+} from './pages';
 
 export default function App() {
   const [page, setPage] = useState<Page>('home');
@@ -26,6 +42,9 @@ export default function App() {
         {page === 'signup' && <Signup go={go} markFirstUser={() => setFirstUser(true)} />}
         {page === 'welcome' && <Welcome go={go} />}
         {page === 'intro' && <Intro go={go} />}
+        {page === 'personalInfo' && <PersonalInfo go={go} />}
+        {page === 'guardianConsent' && <GuardianConsent go={go} />}
+        {page === 'noGuardian' && <NoGuardian go={go} />}
         {page === 'surveyStart' && <SurveyStart go={go} />}
         {page === 'dashboard' && <Dashboard go={go} />}
         {page === 'mypage' && <MyPage go={go} />}

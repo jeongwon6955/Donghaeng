@@ -10,7 +10,7 @@ export function Dashboard({ go }: { go: GoToPage }) {
           <div>
             <div className="text-[20px] font-medium text-greenDeep">{user.name} 님</div>
             <div className="mt-1 text-[14px] text-[#7a9a82]">
-              {user.role} · {user.age}세
+              {user.role}
             </div>
           </div>
           <Icon name="chevron_right" className="text-[22px] text-greenMain" />

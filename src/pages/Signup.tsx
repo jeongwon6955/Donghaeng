@@ -3,6 +3,7 @@ import type { GoToPage } from '../types';
 import { Icon, Phone, TextField } from '../components';
 
 export function Signup({ go, markFirstUser }: { go: GoToPage; markFirstUser: () => void }) {
+  const [name, setName] = useState('');
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
@@ -15,7 +16,8 @@ export function Signup({ go, markFirstUser }: { go: GoToPage; markFirstUser: () 
       <div className="flex flex-1 flex-col items-center gap-3.5 px-6 py-9">
         <img src="./icons/logo_no_title.png" alt="logo" title='logo' className='logo' />
         <h1 className="text-2xl font-bold text-greenDeep">회원가입</h1>
-        <TextField label="이메일" value={id} onChange={setId} placeholder="이메일을 입력하세요" />
+        <TextField label="닉네임" value={name} onChange={setName} placeholder="닉네임을 입력하세요" />
+        <TextField label="아이디" value={id} onChange={setId} placeholder="아이디를 입력하세요" />
         <TextField
           label="비밀번호"
           type={showPassword ? 'text' : 'password'}

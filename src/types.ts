@@ -5,8 +5,7 @@ export type Page =
   | 'welcome'
   | 'intro'
   | 'personalInfo'
-  | 'guardianConsent'
-  | 'noGuardian'
+  | 'gettingStarted'
   | 'surveyStart'
   | 'dashboard'
   | 'mypage'
@@ -16,5 +15,7 @@ export type Page =
   | 'roadmap';
 
 export type RoadmapStatus = 'done' | 'unfinshed';
+
+export type AgeRange = '16-18' | '19-25';
 
 export type GoToPage = (page: Page) => void;

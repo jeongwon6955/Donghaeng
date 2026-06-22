@@ -18,10 +18,9 @@ export function MyPage({ go }: { go: GoToPage }) {
         </div>
         <section className="card p-3">
           {[
-            ['이름', user.name],
+            ['닉네임', user.name],
             ['아이디', user.email],
-            ['전화번호', user.phone],
-            ['유형', `${user.role} · ${user.age}세`]
+            ['연령대', `${user.role}`]
           ].map(([label, value]) => (
             <div key={label} className="flex justify-between border-b border-[#e8f0ec] py-2 last:border-0">
               <span className="text-[15px] text-[#5a7a65]">{label}</span>

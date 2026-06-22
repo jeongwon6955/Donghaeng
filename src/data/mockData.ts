@@ -2,10 +2,8 @@ import type { RoadmapStatus } from '../types';
 
 export const user = {
   name: '홍길동',
-  role: '직장인',
-  age: 28,
+  role: '성인',
   email: 'hong@example.com',
-  phone: '010-1234-5678'
 };
 
 export const surveyRows = [

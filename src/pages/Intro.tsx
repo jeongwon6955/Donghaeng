@@ -5,7 +5,7 @@ export function Intro({ go }: { go: GoToPage }) {
   const cards = [
     ['gps_fixed', '맞춤형 목표 설정', '나에게 맞는 목표를 설정해요'],
     ['assignment', '자가진단 기반 분석', '자가진단으로 현재 상황을 파악해요'],
-    ['map', '로드맵 제공', '맞춤 로드맵으로 함께 나아가요']
+    ['map', '동행 발자국 제공', "동행 발자국과 함께 나아가요"]
   ];
 
   return (

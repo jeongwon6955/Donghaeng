@@ -16,11 +16,11 @@ export const surveyRows = [
 ] as const;
 
 export const roadmapSteps: Array<{ title: string; label: string; status: RoadmapStatus }> = [
-  { title: '1단계. 현황 파악', label: '완료', status: 'done' },
-  { title: '2단계. 목표 설정', label: '완료', status: 'done' },
-  { title: '3단계. 실행 계획', label: '진행중', status: 'active' },
-  { title: '4단계. 점검 & 피드백', label: '대기중', status: 'waiting' },
-  { title: '5단계. 최종 완료', label: '대기중', status: 'waiting' }
+  { title: '1단계. 상황 확인', label: '완료', status: 'done' },
+  { title: '2단계. 맞춤 지원사업 추천', label: '완료', status: 'done' },
+  { title: '3단계. 지원사업 상세 확인', label: '미완료', status: 'unfinshed' },
+  { title: '4단계. 공식 기관 연결', label: '미완료', status: 'unfinshed' },
+  { title: '5단계. 지원 확인 및 신청 진행', label: '미완료', status: 'unfinshed' }
 ];
 
 export const questions = [

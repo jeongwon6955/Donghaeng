@@ -32,7 +32,7 @@ export function Dashboard({ go }: { go: GoToPage }) {
         <section className="card flex-1 p-3">
           <div className="mb-3 flex items-center gap-1 text-[18px] font-medium text-greenDeep">
             <Icon name="map" className="text-xl text-greenMain" />
-            로드맵 현황
+            동행 발자국 현황
           </div>
           <div className="mb-2 flex justify-between text-[14px]">
             <span className="text-[#7a9a82]">전체 진행률</span>

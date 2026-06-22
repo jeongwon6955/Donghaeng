@@ -12,6 +12,6 @@ export type Page =
   | 'surveyComplete'
   | 'roadmap';
 
-export type RoadmapStatus = 'done' | 'active' | 'waiting';
+export type RoadmapStatus = 'done' | 'unfinshed';
 
 export type GoToPage = (page: Page) => void;

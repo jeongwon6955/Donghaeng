@@ -27,7 +27,7 @@ export function SurveyComplete({ go }: { go: GoToPage }) {
             홈으로
           </button>
           <button type="button" className="primary-button" onClick={() => go('roadmap')}>
-            로드맵 확인 <Icon name="arrow_forward" className="text-[18px]" />
+            동행 발자국 확인 <Icon name="arrow_forward" className="text-[18px]" />
           </button>
         </div>
       </div>

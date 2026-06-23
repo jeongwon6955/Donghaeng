@@ -7,6 +7,7 @@ export { GettingStarted } from './GettingStarted';
 export { PersonalInfo } from './PersonalInfo';
 export { Roadmap } from './Roadmap';
 export { Signup } from './Signup';
+export { Start } from './Start';
 export { SurveyComplete } from './SurveyComplete';
 export { SurveyForm } from './SurveyForm';
 export { SurveyResult } from './SurveyResult';

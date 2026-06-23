@@ -1,5 +1,6 @@
 export type Page =
   | 'home'
+  | 'start'
   | 'login'
   | 'signup'
   | 'welcome'

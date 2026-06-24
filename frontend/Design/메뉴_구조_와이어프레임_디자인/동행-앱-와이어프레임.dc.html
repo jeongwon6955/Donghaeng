@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .ms { font-family: 'Material Symbols Outlined'; font-style: normal; font-weight: normal; line-height: 1; display: inline-block; vertical-align: middle; }
+  </style>
+</helmet>
+
+<div style="width:max-content; min-width:100%; min-height:100vh; background:#d4e6d9; padding:48px; box-sizing:border-box;">
+
+  <!-- Title -->
+  <div style="margin-bottom:40px;">
+    <div style="font-family:'Pretendard', sans-serif; font-size:28px; font-weight:500; color:#1a3a24; margin-bottom:4px; letter-spacing:-0.5px;">동행 앱 — 와이어프레임</div>
+    <div style="font-family:'Pretendard', sans-serif; font-size:14px; font-weight:400; color:#4a7557; letter-spacing:-0.3px;">메인 컬러: 초록 계열 · 서브 컬러: 아이보리 · 총 12개 화면</div>
+  </div>
+
+  <!-- ─── ROW 1: 진입 & 인증 ─── -->
+  <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a5c2e; margin-bottom:12px; display:flex; align-items:center; gap:8px; letter-spacing:-0.2px;">
+    <div style="width:3px; height:16px; background:#3d8b65; border-radius:2px;"></div>
+    진입 &amp; 인증 플로우
+  </div>
+  <div style="display:flex; gap:32px; align-items:flex-start; margin-bottom:44px;">
+
+    <!-- ① 홈 비로그인 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">① 홈 (비로그인)</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; font-weight:400; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:28px 22px; gap:14px;">
+          <div style="width:72px; height:72px; border-radius:18px; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:26px; font-weight:500; color:#3d8b65;">동</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:24px; font-weight:500; color:#1a3a24; letter-spacing:-0.5px;">동행</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:400; color:#5a8a65; text-align:center; line-height:1.6; letter-spacing:-0.2px;">함께 걷는 길,<br/>동행이 함께합니다</div>
+          <div style="height:20px;"></div>
+          <div style="display:flex; gap:10px; width:100%;">
+            <div style="flex:1; height:46px; border-radius:12px; border:1.5px solid #3d8b65; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#3d8b65; background:#faf8f2;">로그인</div>
+            <div style="flex:1; height:46px; border-radius:12px; background:#3d8b65; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#fff;">회원가입</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 로그인 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">② 로그인 페이지</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; padding:28px 20px; gap:12px;">
+          <div style="width:52px; height:52px; border-radius:14px; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:20px; font-weight:500; color:#3d8b65;">동</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:500; color:#1a3a24; letter-spacing:-0.3px;">로그인</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:400; color:#7a9a82; letter-spacing:-0.2px;">동행에 오신것을 환영합니다</div>
+          <div style="width:100%; margin-top:4px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#4a7557; margin-bottom:4px; letter-spacing:-0.2px;">아이디 (전화번호 / 이메일)</div>
+            <div style="width:100%; height:40px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb; letter-spacing:-0.2px;">아이디를 입력하세요</div>
+          </div>
+          <div style="width:100%;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#4a7557; margin-bottom:4px; letter-spacing:-0.2px;">비밀번호</div>
+            <div style="width:100%; height:40px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb;">비밀번호를 입력하세요</div>
+          </div>
+          <div style="width:100%; height:46px; background:#3d8b65; border-radius:12px; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#fff; margin-top:6px; letter-spacing:-0.2px;">로그인</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:400; color:#7a9a82; text-decoration:underline; cursor:pointer; letter-spacing:-0.2px;">회원가입하기 →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ 회원가입 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">③ 회원가입 페이지</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; padding:24px 20px; gap:10px;">
+          <div style="width:52px; height:52px; border-radius:14px; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:20px; font-weight:500; color:#3d8b65;">동</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:500; color:#1a3a24; letter-spacing:-0.3px;">회원가입</div>
+          <div style="width:100%;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#4a7557; margin-bottom:4px;">아이디</div>
+            <div style="width:100%; height:40px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb;">아이디를 입력하세요</div>
+          </div>
+          <div style="width:100%;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#4a7557; margin-bottom:4px;">비밀번호</div>
+            <div style="width:100%; height:40px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb;">비밀번호를 입력하세요</div>
+          </div>
+          <div style="width:100%;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#c0392b; margin-bottom:4px;">비밀번호 확인</div>
+            <div style="width:100%; height:40px; border:2px solid #c0392b; border-radius:8px; background:#fff5f5; padding:0 10px; display:flex; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-size:12px; color:#c0392b;">
+              <span class="ms" style="font-size:15px; color:#c0392b;">warning</span>비밀번호****
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:#c0392b; margin-top:4px; letter-spacing:-0.2px;">비밀번호가 일치하지 않습니다</div>
+          </div>
+          <div style="width:100%; height:46px; background:#3d8b65; border-radius:12px; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#fff; margin-top:6px;">회원가입</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 2: 온보딩 ─── -->
+  <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a5c2e; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+    <div style="width:3px; height:16px; background:#3d8b65; border-radius:2px;"></div>
+    온보딩 플로우 (최초 로그인)
+  </div>
+  <div style="display:flex; gap:32px; align-items:flex-start; margin-bottom:44px;">
+
+    <!-- ④ 인사 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">④ 인사 페이지</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:36px 22px 24px;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+            <div style="width:80px; height:80px; border-radius:50%; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center;">
+              <span class="ms" style="font-size:44px; color:#3d8b65;">waving_hand</span>
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:28px; font-weight:500; color:#1a3a24; text-align:center; letter-spacing:-0.5px;">안녕하세요!</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:15px; font-weight:400; color:#3d8b65; text-align:center; line-height:1.6; letter-spacing:-0.3px;">동행에 오신것을<br/>환영합니다</div>
+          </div>
+          <div style="width:100%; height:50px; background:#3d8b65; border-radius:14px; display:flex; align-items:center; justify-content:center; gap:6px; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#fff;">
+            다음<span class="ms" style="font-size:16px; color:#fff;">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ 소개 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑤ 소개 페이지</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; padding:22px 18px; gap:14px;">
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:500; color:#1a3a24; letter-spacing:-0.4px;">동행을 소개합니다</div>
+          <div style="display:flex; flex-direction:column; gap:10px; flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; padding:12px; background:#eef7f2; border-radius:10px; border:1.5px solid #cde8d8;">
+              <span class="ms" style="font-size:24px; color:#3d8b65; flex-shrink:0;">gps_fixed</span>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24; letter-spacing:-0.2px;">맞춤형 목표 설정</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:400; color:#6a9a75; margin-top:2px;">나에게 맞는 목표를 설정해요</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; padding:12px; background:#eef7f2; border-radius:10px; border:1.5px solid #cde8d8;">
+              <span class="ms" style="font-size:24px; color:#3d8b65; flex-shrink:0;">assignment</span>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24; letter-spacing:-0.2px;">설문 기반 분석</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:400; color:#6a9a75; margin-top:2px;">설문으로 현재 상황을 파악해요</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; padding:12px; background:#eef7f2; border-radius:10px; border:1.5px solid #cde8d8;">
+              <span class="ms" style="font-size:24px; color:#3d8b65; flex-shrink:0;">map</span>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24; letter-spacing:-0.2px;">로드맵 제공</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:400; color:#6a9a75; margin-top:2px;">맞춤 로드맵으로 함께 나아가요</div>
+              </div>
+            </div>
+          </div>
+          <div style="width:100%; height:50px; background:#3d8b65; border-radius:14px; display:flex; align-items:center; justify-content:center; gap:6px; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#fff; flex-shrink:0;">
+            다음<span class="ms" style="font-size:16px; color:#fff;">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 설문 시작 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑥ 설문 시작 페이지</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:36px 22px 24px;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+            <div style="width:80px; height:80px; border-radius:50%; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center;">
+              <span class="ms" style="font-size:44px; color:#3d8b65;">edit_note</span>
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:22px; font-weight:500; color:#1a3a24; text-align:center; letter-spacing:-0.4px;">이제 설문을<br/>시작하세요!</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:400; color:#6a9a75; text-align:center; line-height:1.6;">몇 가지 질문으로<br/>당신의 상황을 파악해 드릴게요</div>
+          </div>
+          <div style="width:100%; height:52px; background:#3d8b65; border-radius:14px; display:flex; align-items:center; justify-content:center; gap:6px; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#fff;">
+            설문 시작하기<span class="ms" style="font-size:16px; color:#fff;">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 3: 메인 화면 ─── -->
+  <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a5c2e; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+    <div style="width:3px; height:16px; background:#3d8b65; border-radius:2px;"></div>
+    메인 화면
+  </div>
+  <div style="display:flex; gap:32px; align-items:flex-start; margin-bottom:44px;">
+
+    <!-- ⑦ 메인 대시보드 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑦ 메인 대시보드</div>
+      <div style="width:280px; height:560px; background:#f2f0ea; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#3d8b65; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#fff;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; overflow:hidden; padding:10px 10px 0; display:flex; flex-direction:column; gap:7px;">
+          <!-- Profile -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="width:38px; height:38px; border-radius:50%; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <span class="ms" style="font-size:20px; color:#3d8b65;">person</span>
+            </div>
+            <div style="flex:1;">
+              <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24;">홍길동 님</div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:400; color:#7a9a82;">hong@example.com</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:2px; font-family:'Pretendard',sans-serif; font-size:11px; color:#3d8b65;">
+              마이페이지<span class="ms" style="font-size:14px; color:#3d8b65;">chevron_right</span>
+            </div>
+          </div>
+          <!-- User info -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; margin-bottom:6px; display:flex; align-items:center; gap:4px;">
+              <span class="ms" style="font-size:14px; color:#3d8b65;">person</span>사용자 정보 요약
+            </div>
+            <div style="display:flex; gap:6px;">
+              <div style="flex:1; background:#eef7f2; border-radius:7px; padding:6px; text-align:center;">
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82;">나이</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#3d8b65;">28세</div>
+              </div>
+              <div style="flex:1; background:#eef7f2; border-radius:7px; padding:6px; text-align:center;">
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82;">직업</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#3d8b65;">직장인</div>
+              </div>
+              <div style="flex:1; background:#eef7f2; border-radius:7px; padding:6px; text-align:center;">
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82;">목표</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#3d8b65;">성장</div>
+              </div>
+            </div>
+          </div>
+          <!-- Survey summary -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; margin-bottom:5px; display:flex; align-items:center; gap:4px;">
+              <span class="ms" style="font-size:14px; color:#3d8b65;">assignment</span>설문 결과 요약
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82; margin-bottom:5px;">마지막 설문: 2024.05.10</div>
+            <div style="height:7px; background:#ddf0e5; border-radius:4px; overflow:hidden;">
+              <div style="width:70%; height:100%; background:#3d8b65; border-radius:4px;"></div>
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82; margin-top:3px; text-align:right;">7 / 10 완료</div>
+          </div>
+          <!-- Roadmap -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; margin-bottom:5px; display:flex; align-items:center; gap:4px;">
+              <span class="ms" style="font-size:14px; color:#3d8b65;">map</span>로드맵 현황
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82; margin-bottom:5px;">3단계 진행 중</div>
+            <div style="display:flex; gap:4px;">
+              <div style="flex:1; height:7px; background:#3d8b65; border-radius:4px;"></div>
+              <div style="flex:1; height:7px; background:#3d8b65; border-radius:4px;"></div>
+              <div style="flex:1; height:7px; background:#a8d4bb; border-radius:4px;"></div>
+              <div style="flex:1; height:7px; background:#ddf0e5; border-radius:4px;"></div>
+              <div style="flex:1; height:7px; background:#ddf0e5; border-radius:4px;"></div>
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82; margin-top:3px; text-align:right;">2 / 5 완료</div>
+          </div>
+          <div style="flex:1;"></div>
+        </div>
+        <!-- Bottom tab -->
+        <div style="height:52px; background:#faf8f2; border-top:1.5px solid #cde8d8; display:flex; align-items:center; flex-shrink:0;">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#3d8b65;">home</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:500; color:#3d8b65;">홈</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#aaa;">assignment</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">설문</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#aaa;">map</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">로드맵</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑧ 마이 페이지 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑧ 마이 페이지</div>
+      <div style="width:280px; height:560px; background:#f2f0ea; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#3d8b65; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#fff;">
+          <div style="display:flex; align-items:center; gap:2px;"><span class="ms" style="font-size:14px; color:#fff;">arrow_back</span><span style="font-size:11px;">뒤로</span></div>
+          <span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; overflow:hidden; padding:12px; display:flex; flex-direction:column; gap:8px;">
+          <div style="font-family:'Pretendard',sans-serif; font-size:17px; font-weight:500; color:#1a3a24; letter-spacing:-0.3px;">마이 페이지</div>
+          <!-- Profile -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="width:40px; height:40px; border-radius:50%; background:#e6f4ed; border:2px dashed #3d8b65; display:flex; align-items:center; justify-content:center;">
+              <span class="ms" style="font-size:22px; color:#3d8b65;">person</span>
+            </div>
+            <div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:14px; font-weight:500; color:#1a3a24;">홍길동</div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#7a9a82;">hong@example.com</div>
+            </div>
+          </div>
+          <!-- Detail info -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px; display:flex; flex-direction:column; gap:7px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; padding-bottom:4px; border-bottom:1px dashed #cde8d8;">상세 정보</div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#7a9a82;">연락처</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#1a3a24;">010-1234-5678</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#7a9a82;">나이</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#1a3a24;">28세</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#7a9a82;">직업</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#1a3a24;">직장인</span>
+            </div>
+          </div>
+          <!-- PW change -->
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:10px 12px; display:flex; flex-direction:column; gap:6px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; padding-bottom:4px; border-bottom:1px dashed #cde8d8;">비밀번호 변경</div>
+            <div style="height:34px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb;">현재 비밀번호</div>
+            <div style="height:34px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb;">새 비밀번호</div>
+            <div style="height:34px; border:1.5px solid #c5d8cc; border-radius:8px; background:#f5f2eb; padding:0 10px; display:flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:12px; color:#bbb;">새 비밀번호 확인</div>
+            <div style="height:38px; background:#3d8b65; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#fff; margin-top:2px;">변경하기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑨ 설문 결과 & 재참여 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑨ 설문 결과 &amp; 재참여</div>
+      <div style="width:280px; height:560px; background:#f2f0ea; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#3d8b65; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#fff;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; overflow:hidden; padding:12px 12px 0; display:flex; flex-direction:column; gap:8px;">
+          <div style="font-family:'Pretendard',sans-serif; font-size:17px; font-weight:500; color:#1a3a24; display:flex; align-items:center; gap:5px;">
+            <span class="ms" style="font-size:20px; color:#3d8b65;">assignment</span>설문 결과
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:#7a9a82; margin-top:-4px;">마지막 설문: 2024.05.10</div>
+          <div style="background:#faf8f2; border-radius:12px; border:1.5px solid #cde8d8; padding:12px; flex:1; overflow:hidden; display:flex; flex-direction:column; gap:7px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; padding-bottom:5px; border-bottom:1px dashed #cde8d8;">결과 상세</div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:5px; border-bottom:1px solid #e8f0ec;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">현재 상황</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">안정적</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:5px; border-bottom:1px solid #e8f0ec;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">목표 분야</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">커리어 성장</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:5px; border-bottom:1px solid #e8f0ec;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">우선순위</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">자기계발</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">관심 영역</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">기술 학습</span>
+            </div>
+          </div>
+          <div style="background:#fefce8; border:1.5px dashed #eab308; border-radius:8px; padding:6px 10px; display:flex; align-items:center; gap:5px;">
+            <span class="ms" style="font-size:13px; color:#b45309;">info</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:11px; color:#854d0e;">마지막 설문일로부터 1개월 경과 시에만 노출</span>
+          </div>
+          <div style="height:44px; background:#3d8b65; border-radius:10px; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#fff; flex-shrink:0; margin-bottom:2px;">다시 설문하기</div>
+        </div>
+        <!-- Bottom tab -->
+        <div style="height:52px; background:#faf8f2; border-top:1.5px solid #cde8d8; display:flex; align-items:center; flex-shrink:0;">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#aaa;">home</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">홈</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#3d8b65;">assignment</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:500; color:#3d8b65;">설문</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#aaa;">map</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">로드맵</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── ROW 4: 설문 & 결과 & 로드맵 ─── -->
+  <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a5c2e; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+    <div style="width:3px; height:16px; background:#3d8b65; border-radius:2px;"></div>
+    설문 진행 &amp; 결과 &amp; 로드맵
+  </div>
+  <div style="display:flex; gap:32px; align-items:flex-start; margin-bottom:48px;">
+
+    <!-- ⑩ 설문 폼 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑩ 설문 폼 (진행)</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; padding:18px 16px; gap:14px;">
+          <!-- Progress -->
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:11px; color:#7a9a82;">설문 진행</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#3d8b65;">3 / 10</span>
+            </div>
+            <div style="height:7px; background:#ddf0e5; border-radius:4px; overflow:hidden;">
+              <div style="width:30%; height:100%; background:#3d8b65; border-radius:4px;"></div>
+            </div>
+          </div>
+          <!-- Question -->
+          <div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:#9ab8a4; margin-bottom:4px;">Q3.</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:16px; font-weight:500; color:#1a3a24; line-height:1.5; letter-spacing:-0.3px;">현재 나의 상황은 어떻게 느껴지나요?</div>
+          </div>
+          <!-- Options -->
+          <div style="display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="height:46px; border-radius:12px; border:2px solid #3d8b65; background:#e8f5ee; display:flex; align-items:center; gap:10px; padding:0 12px;">
+              <div style="width:18px; height:18px; border-radius:50%; background:#3d8b65; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><div style="width:7px; height:7px; border-radius:50%; background:#fff;"></div></div>
+              <span style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24;">매우 안정적이다</span>
+            </div>
+            <div style="height:46px; border-radius:12px; border:1.5px solid #cde8d8; background:#f5f2eb; display:flex; align-items:center; gap:10px; padding:0 12px;">
+              <div style="width:18px; height:18px; border-radius:50%; border:1.5px solid #c5d8cc; flex-shrink:0;"></div>
+              <span style="font-family:'Pretendard',sans-serif; font-size:13px; color:#5a7a65;">보통이다</span>
+            </div>
+            <div style="height:46px; border-radius:12px; border:1.5px solid #cde8d8; background:#f5f2eb; display:flex; align-items:center; gap:10px; padding:0 12px;">
+              <div style="width:18px; height:18px; border-radius:50%; border:1.5px solid #c5d8cc; flex-shrink:0;"></div>
+              <span style="font-family:'Pretendard',sans-serif; font-size:13px; color:#5a7a65;">다소 불안정하다</span>
+            </div>
+            <div style="height:46px; border-radius:12px; border:1.5px solid #cde8d8; background:#f5f2eb; display:flex; align-items:center; gap:10px; padding:0 12px;">
+              <div style="width:18px; height:18px; border-radius:50%; border:1.5px solid #c5d8cc; flex-shrink:0;"></div>
+              <span style="font-family:'Pretendard',sans-serif; font-size:13px; color:#5a7a65;">매우 불안정하다</span>
+            </div>
+          </div>
+          <!-- Nav -->
+          <div style="display:flex; gap:8px; flex-shrink:0;">
+            <div style="flex:1; height:46px; border-radius:12px; border:1.5px solid #cde8d8; background:#f5f2eb; display:flex; align-items:center; justify-content:center; gap:4px; font-family:'Pretendard',sans-serif; font-size:13px; color:#5a7a65;">
+              <span class="ms" style="font-size:16px; color:#5a7a65;">arrow_back</span>이전
+            </div>
+            <div style="flex:2; height:46px; border-radius:12px; background:#3d8b65; display:flex; align-items:center; justify-content:center; gap:4px; font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#fff;">
+              다음<span class="ms" style="font-size:16px; color:#fff;">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑪ 설문 완료 결과 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑪ 설문 완료 결과</div>
+      <div style="width:280px; height:560px; background:#faf8f2; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#c8e6d0; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#2e6647;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; padding:20px 16px; gap:12px;">
+          <div style="text-align:center; padding-bottom:4px;">
+            <div style="display:flex; justify-content:center; margin-bottom:8px;">
+              <span class="ms" style="font-size:48px; color:#3d8b65;">check_circle</span>
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:20px; font-weight:500; color:#1a3a24; letter-spacing:-0.4px;">설문 완료!</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:#7a9a82; margin-top:4px;">2024.05.10 완료</div>
+          </div>
+          <div style="background:#eef7f2; border-radius:12px; border:1.5px solid #cde8d8; padding:12px; flex:1; overflow:hidden; display:flex; flex-direction:column; gap:7px;">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500; color:#1a3a24; padding-bottom:5px; border-bottom:1px dashed #cde8d8;">상세 설문 결과</div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:5px; border-bottom:1px solid #d8ede3;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">현재 상황</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">안정적</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:5px; border-bottom:1px solid #d8ede3;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">목표 분야</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">커리어 성장</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:5px; border-bottom:1px solid #d8ede3;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">우선순위</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">자기계발</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#5a7a65;">추천 경로</span>
+              <span style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#3d8b65;">성장 집중형</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; flex-shrink:0;">
+            <div style="flex:1; height:50px; border-radius:12px; border:1.5px solid #3d8b65; background:#faf8f2; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#3d8b65;">홈으로</div>
+            <div style="flex:1; height:50px; border-radius:12px; background:#3d8b65; display:flex; align-items:center; justify-content:center; gap:4px; font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#fff;">
+              로드맵<span class="ms" style="font-size:15px; color:#fff;">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑫ 로드맵 -->
+    <div style="flex:none; width:280px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; font-weight:500; color:#2a5a35; text-align:center; margin-bottom:8px;">⑫ 로드맵 페이지</div>
+      <div style="width:280px; height:560px; background:#f2f0ea; border-radius:30px; border:2px solid #1a2a20; box-shadow:4px 4px 0 #1a2a20; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="height:24px; background:#3d8b65; display:flex; align-items:center; justify-content:space-between; padding:0 14px; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:11px; color:#fff;">
+          <span>9:41</span><span style="font-size:8px; letter-spacing:2px;">●●●</span>
+        </div>
+        <div style="flex:1; overflow:hidden; padding:12px 12px 0; display:flex; flex-direction:column; gap:8px;">
+          <div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:17px; font-weight:500; color:#1a3a24; display:flex; align-items:center; gap:5px; letter-spacing:-0.3px;">
+              <span class="ms" style="font-size:20px; color:#3d8b65;">map</span>나의 로드맵
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:#7a9a82; margin-top:2px; padding-left:25px;">설문 기반 맞춤형 로드맵</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:6px; flex:1; overflow:hidden;">
+            <!-- Step 1 완료 -->
+            <div style="display:flex; align-items:center; gap:10px; padding:10px 12px; background:#faf8f2; border-radius:10px; border:1.5px solid #3d8b65;">
+              <div style="width:28px; height:28px; border-radius:50%; background:#3d8b65; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <span class="ms" style="font-size:16px; color:#fff;">check</span>
+              </div>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24;">1단계. 현황 파악</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#3d8b65;">완료</div>
+              </div>
+            </div>
+            <!-- Step 2 완료 -->
+            <div style="display:flex; align-items:center; gap:10px; padding:10px 12px; background:#faf8f2; border-radius:10px; border:1.5px solid #3d8b65;">
+              <div style="width:28px; height:28px; border-radius:50%; background:#3d8b65; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <span class="ms" style="font-size:16px; color:#fff;">check</span>
+              </div>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24;">2단계. 목표 설정</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#3d8b65;">완료</div>
+              </div>
+            </div>
+            <!-- Step 3 진행중 -->
+            <div style="display:flex; align-items:center; gap:10px; padding:10px 12px; background:#fffbeb; border-radius:10px; border:1.5px dashed #eab308;">
+              <div style="width:28px; height:28px; border-radius:50%; background:#eab308; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <span class="ms" style="font-size:16px; color:#fff;">sync</span>
+              </div>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500; color:#1a3a24;">3단계. 실행 계획</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#b45309;">진행중</div>
+              </div>
+            </div>
+            <!-- Step 4 대기 -->
+            <div style="display:flex; align-items:center; gap:10px; padding:10px 12px; background:#faf8f2; border-radius:10px; border:1.5px solid #dde8e2; opacity:0.7;">
+              <div style="width:28px; height:28px; border-radius:50%; background:#ddf0e5; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:12px; color:#999;">4</div>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; color:#8aaa98;">4단계. 점검 &amp; 피드백</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">대기중</div>
+              </div>
+            </div>
+            <!-- Step 5 대기 -->
+            <div style="display:flex; align-items:center; gap:10px; padding:10px 12px; background:#faf8f2; border-radius:10px; border:1.5px solid #dde8e2; opacity:0.55;">
+              <div style="width:28px; height:28px; border-radius:50%; background:#ddf0e5; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Pretendard',sans-serif; font-size:12px; color:#999;">5</div>
+              <div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:13px; color:#8aaa98;">5단계. 최종 완료</div>
+                <div style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">대기중</div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1; min-height:0;"></div>
+        </div>
+        <!-- Bottom tab -->
+        <div style="height:52px; background:#faf8f2; border-top:1.5px solid #cde8d8; display:flex; align-items:center; flex-shrink:0;">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#aaa;">home</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">홈</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#aaa;">assignment</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; color:#aaa;">설문</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span class="ms" style="font-size:18px; color:#3d8b65;">map</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:500; color:#3d8b65;">로드맵</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

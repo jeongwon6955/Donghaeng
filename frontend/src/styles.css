@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #d4e6d9;
+  color: #1a3a24;
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.logo {
+  width: 190px;
+}
+
+.ms {
+  display: inline-block;
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+@keyframes page-fade-slide-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes survey-option-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes loading-dot-cycle {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+
+  30%,
+  72% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  84%,
+  100% {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 12px, 0) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0) scale(1);
+  }
+}
+
+.page-transition {
+  min-height: 100svh;
+  animation: page-fade-slide-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+@layer components {
+  .phone {
+    @apply mx-auto flex min-h-[100svh] w-full max-w-[390px] flex-col overflow-hidden;
+  }
+
+  .phone-screen {
+    @apply flex min-h-0 flex-1 flex-col;
+    padding-top: max(18px, env(safe-area-inset-top));
+  }
+
+  .field-label {
+    @apply mb-1.5 text-[14px] font-medium text-[#4a7557];
+  }
+
+  .field-input {
+    @apply flex h-12 w-full items-center rounded-[10px] border-[1.5px] border-[#c5d8cc] bg-input px-3 text-[15px] text-greenDeep outline-none placeholder:text-[#b7b7b7] focus:border-greenMain;
+  }
+
+  .primary-button {
+    @apply flex h-[52px] w-full items-center justify-center gap-1 rounded-xl bg-greenMain text-[16px] font-medium text-white;
+  }
+
+  .secondary-button {
+    @apply flex h-[52px] w-full items-center justify-center rounded-xl border-[1.5px] border-greenMain bg-ivory text-[16px] font-medium text-greenMain;
+  }
+
+  .card {
+    @apply rounded-xl border-[1.5px] border-[#cde8d8] bg-ivory;
+  }
+
+  .survey-progress-fill {
+    transition: width 520ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: width;
+  }
+
+  .survey-option {
+    opacity: 0;
+    animation: survey-option-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    will-change: opacity, transform;
+  }
+
+  .loading-dots {
+    display: inline-flex;
+    width: 1.2em;
+    justify-content: flex-start;
+  }
+
+  .loading-dots span {
+    opacity: 0;
+    animation: loading-dot-cycle 1.5s ease-in-out infinite;
+    will-change: opacity, transform;
+  }
+
+  .loading-dots span:nth-child(2) {
+    animation-delay: 160ms;
+  }
+
+  .loading-dots span:nth-child(3) {
+    animation-delay: 320ms;
+  }
+
+  .toast-wrap {
+    position: fixed;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    left: 50%;
+    z-index: 60;
+    width: min(calc(100vw - 32px), 358px);
+    pointer-events: none;
+    animation: toast-enter 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .toast {
+    @apply flex items-start gap-2 rounded-xl px-4 py-3 text-left shadow-[0_12px_30px_rgba(26,58,36,0.18)] backdrop-blur;
+    pointer-events: auto;
+  }
+
+  .toast-error {
+    @apply border border-[#f1b8ad] bg-[#fff6f4]/95 text-[#a73826];
+  }
+
+  .toast-success {
+    @apply border border-[#b8dec8] bg-[#f3fbf6]/95 text-greenDeep;
+  }
+
+  .toast-close {
+    @apply -mr-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-current opacity-70;
+  }
+}

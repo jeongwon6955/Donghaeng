@@ -5,7 +5,7 @@ export function BottomTabs({ active, go }: { active: 'home' | 'survey' | 'roadma
   const tabs = [
     { id: 'home', label: '홈', icon: 'home', page: 'dashboard' },
     { id: 'survey', label: '자가진단', icon: 'assignment', page: 'surveyResult' },
-    { id: 'roadmap', label: '동행 발자국', icon: 'map', page: 'roadmap' }
+    { id: 'roadmap', label: '동행 발자국', icon: 'map', page: 'roadmapCurrent' }
   ] as const;
 
   return (

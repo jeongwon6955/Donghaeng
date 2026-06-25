@@ -1,4 +1,4 @@
-import type { Page, RoadmapStatus } from '../types';
+import type { Page } from '../types';
 
 export const user = {
   name: '홍길동',
@@ -13,12 +13,13 @@ export const surveyRows = [
   ['관심 영역', '기술 학습']
 ] as const;
 
-export const roadmapSteps: Array<{ title: string; label: string; status: RoadmapStatus; page?: Page }> = [
-  { title: '1단계. 상황 확인', label: '완료', status: 'done', page: 'surveyResult' },
-  { title: '2단계. 맞춤 지원사업 추천', label: '완료', status: 'done' },
-  { title: '3단계. 지원사업 확인', label: '미완료', status: 'unfinshed' },
-  { title: '4단계. 상담 준비 가이드', label: '미완료', status: 'unfinshed' },
-  { title: '5단계. 공식 기관 연결', label: '미완료', status: 'unfinshed' }
+export const roadmapSteps: Array<{ title: string; page: Page }> = [
+  { title: '1단계. 상황 확인', page: 'surveyResult' },
+  { title: '2단계. 맞춤 지원사업 추천', page: 'customSupport' },
+  { title: '3단계. 지원사업 확인', page: 'supportCheck' },
+  { title: '4단계. 상담 준비 가이드', page: 'consultingGuide' },
+  { title: '5단계. 공식 기관 연결', page: 'agencyConnect' },
+  { title: '6단계. 추가 문의 안내', page: 'inquiryGuide' }
 ];
 
 export const questions = [

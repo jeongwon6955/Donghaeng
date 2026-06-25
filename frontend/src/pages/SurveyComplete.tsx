@@ -80,7 +80,7 @@ export function SurveyComplete({ go }: { go: GoToPage }) {
           <button
             type="button"
             className="flex h-[52px] min-w-0 flex-[1.6] items-center justify-center gap-1 rounded-xl bg-greenMain px-3 text-[14px] font-medium text-white"
-            onClick={() => go('roadmap')}
+            onClick={() => go('roadmapCurrent')}
           >
             <span className="whitespace-nowrap">동행 발자국 확인</span>
             <Icon name="arrow_forward" className="text-[17px]" />

@@ -14,9 +14,15 @@ export type Page =
   | 'surveyResult'
   | 'surveyForm'
   | 'surveyComplete'
+  | 'customSupport'
+  | 'supportCheck'
+  | 'consultingGuide'
+  | 'agencyConnect'
+  | 'inquiryGuide'
+  | 'roadmapCurrent'
   | 'roadmap';
 
-export type RoadmapStatus = 'done' | 'unfinshed';
+export type RoadmapStatus = 'done' | 'inProgress' | 'unfinshed';
 
 export type AgeRange = '16-18' | '19-25';
 

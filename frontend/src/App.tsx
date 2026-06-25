@@ -5,6 +5,7 @@ import type { AgeRange, Page } from './types';
 import { AuthRequiredModal } from './components';
 import {
   Dashboard,
+  CustomSupport,
   GettingStarted,
   Home,
   Intro,
@@ -13,6 +14,7 @@ import {
   MyPage,
   PersonalInfo,
   Roadmap,
+  RoadmapStagePage,
   Signup,
   Start,
   SurveyComplete,
@@ -32,6 +34,7 @@ export default function App() {
   const [authRequiredOpen, setAuthRequiredOpen] = useState(false);
   const [selectedAgeRange, setSelectedAgeRange] = useState<AgeRange>('16-18');
   const [lastSurveyDate, setLastSurveyDate] = useState(new Date('2026-05-10T00:00:00+09:00'));
+  const [completedRoadmapStep, setCompletedRoadmapStep] = useState(1);
 
   const showReminder = useMemo(() => {
     const elapsed = Date.now() - lastSurveyDate.getTime();
@@ -39,6 +42,15 @@ export default function App() {
   }, [lastSurveyDate]);
 
   const firstPageForUser = (user: AuthUser): Page => (user.track_type === null ? 'welcome' : 'dashboard');
+
+  const currentRoadmapPage = (): Page => {
+    if (completedRoadmapStep <= 1) return 'customSupport';
+    if (completedRoadmapStep === 2) return 'supportCheck';
+    if (completedRoadmapStep === 3) return 'consultingGuide';
+    if (completedRoadmapStep === 4) return 'agencyConnect';
+    if (completedRoadmapStep === 5) return 'inquiryGuide';
+    return 'roadmap';
+  };
 
   const moveTo = (next: Page) => {
     setTransitionKey((key) => key + 1);
@@ -48,6 +60,11 @@ export default function App() {
   const go = (next: Page) => {
     if (currentUser && (next === 'home' || next === 'start' || next === 'login' || next === 'signup')) {
       moveTo(firstPageForUser(currentUser));
+      return;
+    }
+
+    if (next === 'roadmapCurrent') {
+      moveTo(currentRoadmapPage());
       return;
     }
 
@@ -96,12 +113,48 @@ export default function App() {
   }, []);
 
   const goWithAuthGuard = (next: Page) => {
-    if (isGuest && (next === 'mypage' || next === 'roadmap')) {
+    if (
+      isGuest &&
+      (next === 'mypage' ||
+        next === 'roadmap' ||
+        next === 'roadmapCurrent' ||
+        next === 'customSupport' ||
+        next === 'supportCheck' ||
+        next === 'consultingGuide' ||
+        next === 'agencyConnect' ||
+        next === 'inquiryGuide')
+    ) {
       setAuthRequiredOpen(true);
       return;
     }
 
     go(next);
+  };
+
+  const completeRoadmapStep = (step: number) => {
+    setCompletedRoadmapStep((current) => Math.max(current, step));
+
+    if (step === 2) {
+      go('supportCheck');
+      return;
+    }
+
+    if (step === 3) {
+      go('consultingGuide');
+      return;
+    }
+
+    if (step === 4) {
+      go('agencyConnect');
+      return;
+    }
+
+    if (step === 5) {
+      go('inquiryGuide');
+      return;
+    }
+
+    go('roadmap');
   };
 
   const enterGuest = () => {
@@ -164,7 +217,7 @@ export default function App() {
         {page === 'personalInfo' && <PersonalInfo go={go} onAgeRangeSelect={completeTrackType} isGuest={isGuest} />}
         {page === 'gettingStarted' && <GettingStarted go={go} ageRange={selectedAgeRange} />}
         {page === 'surveyStart' && <SurveyStart go={go} />}
-        {page === 'dashboard' && <Dashboard go={goWithAuthGuard} isGuest={isGuest} user={currentUser} />}
+        {page === 'dashboard' && <Dashboard go={goWithAuthGuard} isGuest={isGuest} user={currentUser} completedRoadmapStep={completedRoadmapStep} />}
         {page === 'mypage' && <MyPage go={goWithAuthGuard} user={currentUser} onUserChange={setCurrentUser} onLogout={logout} />}
         {page === 'surveyResult' && <SurveyResult go={goWithAuthGuard} showReminder={showReminder} />}
         {page === 'surveyForm' && (
@@ -172,11 +225,42 @@ export default function App() {
             go={go}
             completeSurvey={() => {
               setLastSurveyDate(new Date());
+              setCompletedRoadmapStep((current) => Math.max(current, 1));
             }}
           />
         )}
         {page === 'surveyComplete' && <SurveyComplete go={goWithAuthGuard} />}
-        {page === 'roadmap' && <Roadmap go={goWithAuthGuard} />}
+        {page === 'customSupport' && (
+          <CustomSupport go={goWithAuthGuard} completed={completedRoadmapStep >= 2} onComplete={() => completeRoadmapStep(2)} />
+        )}
+        {page === 'supportCheck' && (
+          <RoadmapStagePage go={goWithAuthGuard} stage="supportCheck" completed={completedRoadmapStep >= 3} onComplete={() => completeRoadmapStep(3)} />
+        )}
+        {page === 'consultingGuide' && (
+          <RoadmapStagePage
+            go={goWithAuthGuard}
+            stage="consultingGuide"
+            completed={completedRoadmapStep >= 4}
+            onComplete={() => completeRoadmapStep(4)}
+          />
+        )}
+        {page === 'agencyConnect' && (
+          <RoadmapStagePage
+            go={goWithAuthGuard}
+            stage="agencyConnect"
+            completed={completedRoadmapStep >= 5}
+            onComplete={() => completeRoadmapStep(5)}
+          />
+        )}
+        {page === 'inquiryGuide' && (
+          <RoadmapStagePage
+            go={goWithAuthGuard}
+            stage="inquiryGuide"
+            completed={completedRoadmapStep >= 6}
+            onComplete={() => completeRoadmapStep(6)}
+          />
+        )}
+        {page === 'roadmap' && <Roadmap go={goWithAuthGuard} completedStep={completedRoadmapStep} />}
       </div>
       {authRequiredOpen ? (
         <AuthRequiredModal
